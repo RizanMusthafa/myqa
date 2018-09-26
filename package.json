@@ -1,0 +1,22 @@
+{
+  "name": "myqa",
+  "version": "1.0.0",
+  "description": "ask your question give your answer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "social",
+    "qa"
+  ],
+  "author": "Rizan Mohomed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "joi": "^13.6.0",
+    "mongoose": "^5.2.17"
+  }
+}
