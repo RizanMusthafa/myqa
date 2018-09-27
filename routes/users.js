@@ -20,4 +20,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  const id = req.params.id;
+  try {
+    const user = await User.findOneAndUpdate({ _id: id }, req.body, {
+      new: true,
+      runValidators: true
+    });
+    return res.send(user);
+  } catch (ex) {
+    return res.send(ex.message);
+  }
+});
+
 module.exports = router;
