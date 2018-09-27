@@ -5,6 +5,7 @@ const userRouter = require('./routes/users');
 const app = express();
 connectDB();
 
+app.use(express.json());
 app.get('/', (req, res) => {
   res.send('index page view');
 });
