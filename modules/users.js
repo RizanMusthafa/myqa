@@ -6,26 +6,30 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 3,
-    maxlength: 150
+    maxlength: 150,
+    trim: true
   },
   sName: {
     type: String,
     required: true,
     minlength: 3,
-    maxlength: 150
+    maxlength: 150,
+    trim: true
   },
   email: {
     type: String,
     required: true,
     minlength: 5,
     maxlength: 150,
-    unique: true
+    unique: true,
+    trim: true
   },
   password: {
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 1024
+    maxlength: 1024,
+    trim: true
   }
 });
 

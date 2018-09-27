@@ -20,6 +20,13 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  const id = req.params.id;
+  const user = await User.findById(id).select('-password -__v');
+  if (!user) return res.status(404).send('Invalid user id');
+  res.send(user);
+});
+
 router.put('/:id', async (req, res) => {
   const id = req.params.id;
   try {
