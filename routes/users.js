@@ -40,4 +40,11 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  const id = req.params.id;
+  const user = await User.findOneAndRemove({ _id: id }).select('-password');
+  if (!user) return res.status(404).send('invalid user id');
+  return res.send(user);
+});
+
 module.exports = router;
