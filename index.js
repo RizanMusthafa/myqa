@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoos = require('mongoose');
 const userRouter = require('./routes/users');
+const questionRouter = require('./routes/question');
 
 const app = express();
 connectDB();
@@ -15,6 +16,7 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/users', userRouter);
+app.use('/api/questions', questionRouter);
 
 const PORT = process.env.PORT || 3300;
 
